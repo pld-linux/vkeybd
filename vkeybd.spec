@@ -1,16 +1,16 @@
 #
 # Conditional build
-%bcond_with ladcca	# with LADCCA support
+%bcond_with	ladcca	# with LADCCA support
 #
 Summary:	Virtual Keyboard
 Summary(pl):	Wirtualne klawisze
 Name:		vkeybd
-Version:	0.1.16
+Version:	0.1.17
 Release:	1
 License:	GPL
 Group:		X11/Applications/Sound
 Source0:	http://www.alsa-project.org/~iwai/%{name}-%{version}.tar.gz
-# Source0-md5:	bddf874e24287b488510b038164c315d
+# Source0-md5:	3be348329a5aac3cdc21f89458d9369a
 Source1:	%{name}rc
 Source2:	%{name}.desktop
 Patch0:		%{name}-Makefile.patch
