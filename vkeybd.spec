@@ -1,5 +1,5 @@
 Summary:	Virtual Keyboard
-Summary(pl):	Wirualne Klawisze
+Summary(pl):	Wirtualne klawisze
 Name:		vkeybd
 Version:	0.1.13
 Release:	1
@@ -11,8 +11,8 @@ Source2:	%{name}.desktop
 Patch0:		%{name}-Makefile.patch
 URL:		http://members.tripod.de/iwai/awedrv.html
 BuildRequires:	XFree86-devel
-BuildRequires:	tk-devel
 BuildRequires:	alsa-lib-devel
+BuildRequires:	tk-devel
 #BuildRequires: laddca-devel
 # laddca support disabled in vkeybd-Makefile.patch, doesn't build for now
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -48,7 +48,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README
 %attr(755,root,root) %{_bindir}/*
-%{_mandir}/*
-%dir %{_datadir}/vkeybd
-%{_datadir}/vkeybd/*
-%{_applnkdir}/*/*
+%{_mandir}/man?/*
+%{_datadir}/vkeybd
+%{_applnkdir}/*/*.desktop
