@@ -8,5 +8,5 @@ Exec=/usr/bin/vkeybd
 Icon=vkeybd.png
 Terminal=false
 Type=Application
-Categories=Application;AudioVideo;
+Categories=AudioVideo;Midi;
 # vi: encoding=utf-8
