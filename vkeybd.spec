@@ -5,15 +5,14 @@
 Summary:	Virtual Keyboard
 Summary(pl):	Wirtualne klawisze
 Name:		vkeybd
-Version:	0.1.15
+Version:	0.1.16
 Release:	1
 License:	GPL
 Group:		X11/Applications/Sound
 Source0:	http://www.alsa-project.org/~iwai/%{name}-%{version}.tar.gz
-# Source0-md5:	cf5112b4119ee21be7a819533777ba01
+# Source0-md5:	bddf874e24287b488510b038164c315d
 Source1:	%{name}rc
 Source2:	%{name}.desktop
-Source3:	%{name}.png
 Patch0:		%{name}-Makefile.patch
 URL:		http://www.alsa-project.org/alsa.html
 BuildRequires:	XFree86-devel
@@ -39,22 +38,21 @@ klawisze syntezatora MIDI.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_desktopdir},%{_pixmapsdir}}
 
-%{__make} \
-	PREFIX=$RPM_BUILD_ROOT%{_prefix} install-all \
-	OPTFLAGS="%{rpmcflags}"
+%{__make} install-all \
+	DESTDIR=$RPM_BUILD_ROOT
 
 install -c %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/vkeybd
 install -c %{SOURCE2} $RPM_BUILD_ROOT%{_desktopdir}
-install -c %{SOURCE3} $RPM_BUILD_ROOT%{_pixmapsdir}
+mv $RPM_BUILD_ROOT%{_pixmapsdir}/vkeybd_48x48.png $RPM_BUILD_ROOT%{_pixmapsdir}/vkeybd.png
+rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/vkeybd_*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
+%doc ChangeLog README
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man?/*
 %{_datadir}/vkeybd
