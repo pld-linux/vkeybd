@@ -1,0 +1,21 @@
+diff -aurN vkeybd.orig/Makefile vkeybd/Makefile
+--- vkeybd.orig/Makefile	2003-01-23 16:41:33.000000000 +0100
++++ vkeybd/Makefile	2003-06-21 17:03:07.000000000 +0200
+@@ -8,7 +8,7 @@
+ #
+ # installation directory
+ #
+-PREFIX = /usr/local
++PREFIX = /usr
+ # binary and Tcl script are put there
+ BIN_DIR = $(PREFIX)/bin
+ # man page
+@@ -81,7 +81,7 @@
+ 
+ VKB_TCLFILE = $(VKBLIB_DIR)/vkeybd.tcl
+ 
+-CFLAGS = -Wall -O -DVKB_TCLFILE=\"$(VKB_TCLFILE)\" \
++CFLAGS = -Wall -DVKB_TCLFILE=\"$(VKB_TCLFILE)\" \
+ 	-DVKBLIB_DIR=\"$(VKBLIB_DIR)\"\
+ 	-DVERSION_STR=\"$(VERSION)\"\
+ 	$(DEVICES) $(XINC) $(TCLINC) $(TKINC) $(LADCCACFLAGS)
