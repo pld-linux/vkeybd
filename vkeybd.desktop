@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Virtual Keyboard
+Name[pl]=Wirtualne Klawisze
+Comment=Virtual Keyboard
+Comment[pl]=Wirtualne klawisze
+Exec=/usr/bin/vkeybd
+Terminal=0
+Type=Application
