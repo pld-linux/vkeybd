@@ -6,7 +6,7 @@ Summary:	Virtual Keyboard
 Summary(pl):	Wirtualne klawisze
 Name:		vkeybd
 Version:	0.1.17
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Sound
 Source0:	http://www.alsa-project.org/~iwai/%{name}-%{version}.tar.gz
@@ -14,6 +14,7 @@ Source0:	http://www.alsa-project.org/~iwai/%{name}-%{version}.tar.gz
 Source1:	%{name}rc
 Source2:	%{name}.desktop
 Patch0:		%{name}-Makefile.patch
+Patch1:		%{name}-lib64.patch
 URL:		http://www.alsa-project.org/alsa.html
 BuildRequires:	XFree86-devel
 BuildRequires:	alsa-lib-devel
@@ -32,6 +33,9 @@ klawisze syntezatora MIDI.
 %prep
 %setup -q -n %{name}
 %patch0 -p1
+%if "%{_lib}" == "lib64"
+%patch1 -p1
+%endif
 
 %build
 %{__make} %{?with_ladcca:USE_LADCCA=1}
