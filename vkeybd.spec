@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications/Sound
 Source0:	http://members.tripod.de/iwai/%{name}-%{version}.tar.gz
+# Source0-md5:	67bba371ed5ca9459420c82f34d0e705
 Source1:	%{name}rc
 Source2:	%{name}.desktop
 Patch0:		%{name}-Makefile.patch
