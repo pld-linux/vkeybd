@@ -1,3 +1,7 @@
+#
+# Conditional build
+%bcond_with ladcca	# with LADCCA support
+#
 Summary:	Virtual Keyboard
 Summary(pl):	Wirtualne klawisze
 Name:		vkeybd
@@ -14,7 +18,7 @@ Patch0:		%{name}-Makefile.patch
 URL:		http://www.alsa-project.org/alsa.html
 BuildRequires:	XFree86-devel
 BuildRequires:	alsa-lib-devel
-#BuildRequires:	ladcca-devel >= 0.3.1
+%{?with_ladcca:BuildRequires:	ladcca-devel >= 0.4.0}
 BuildRequires:	tk-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -31,7 +35,7 @@ klawisze syntezatora MIDI.
 %patch0 -p1
 
 %build
-%{__make}
+%{__make} %{?with_ladcca:USE_LADCCA=1}
 
 %install
 rm -rf $RPM_BUILD_ROOT
