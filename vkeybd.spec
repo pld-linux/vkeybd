@@ -21,7 +21,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This is a virtual keyboard for AWE, MIDI and ALSA drivers. It's a
 simple fake of a MIDI keyboard.
 
-%description  -l pl
+%description -l pl
 Wirtualne klawisze dla sterowników AWE, MIDI i ALSA. Program "udaje"
 klawisze syntezatora MIDI.
 
