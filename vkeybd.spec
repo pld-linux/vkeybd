@@ -2,20 +2,20 @@ Summary:	Virtual Keyboard
 Summary(pl):	Wirtualne klawisze
 Name:		vkeybd
 Version:	0.1.13
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Sound
-Source0:	http://members.tripod.de/iwai/%{name}-%{version}.tar.gz
-# Source0-md5:	67bba371ed5ca9459420c82f34d0e705
+Source0:	http://www.alsa-project.org/~iwai/%{name}-%{version}.tar.gz
+# Source0-md5:	3c8353800e28783b23e19478143d11f6
 Source1:	%{name}rc
 Source2:	%{name}.desktop
 Patch0:		%{name}-Makefile.patch
-URL:		http://members.tripod.de/iwai/awedrv.html
+URL:		http://www.alsa-project.org/alsa.html
 BuildRequires:	XFree86-devel
 BuildRequires:	alsa-lib-devel
 BuildRequires:	tk-devel
 #BuildRequires: laddca-devel
-# laddca support disabled in vkeybd-Makefile.patch, doesn't build for now
+# laddca support disabled in Makefile, doesn't build for now
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
