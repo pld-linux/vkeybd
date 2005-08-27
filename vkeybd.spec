@@ -46,8 +46,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install-all \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install -c %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/vkeybd
-install -c %{SOURCE2} $RPM_BUILD_ROOT%{_desktopdir}
+install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/vkeybd
+install %{SOURCE2} $RPM_BUILD_ROOT%{_desktopdir}
 mv $RPM_BUILD_ROOT%{_pixmapsdir}/vkeybd_48x48.png $RPM_BUILD_ROOT%{_pixmapsdir}/vkeybd.png
 rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/vkeybd_*
 
