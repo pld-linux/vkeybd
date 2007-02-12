@@ -3,7 +3,7 @@
 %bcond_with	ladcca	# with LADCCA support
 #
 Summary:	Virtual Keyboard
-Summary(pl):	Wirtualne klawisze
+Summary(pl.UTF-8):   Wirtualne klawisze
 Name:		vkeybd
 Version:	0.1.17
 Release:	2
@@ -26,8 +26,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This is a virtual keyboard for AWE, MIDI and ALSA drivers. It's a
 simple fake of a MIDI keyboard.
 
-%description -l pl
-Wirtualne klawisze dla sterowników AWE, MIDI i ALSA. Program "udaje"
+%description -l pl.UTF-8
+Wirtualne klawisze dla sterownikÃ³w AWE, MIDI i ALSA. Program "udaje"
 klawisze syntezatora MIDI.
 
 %prep
