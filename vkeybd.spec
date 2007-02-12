@@ -3,7 +3,7 @@
 %bcond_with	ladcca	# with LADCCA support
 #
 Summary:	Virtual Keyboard
-Summary(pl.UTF-8):   Wirtualne klawisze
+Summary(pl.UTF-8):	Wirtualne klawisze
 Name:		vkeybd
 Version:	0.1.17
 Release:	2
