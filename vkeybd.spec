@@ -5,12 +5,12 @@
 Summary:	Virtual Keyboard
 Summary(pl.UTF-8):	Wirtualne klawisze
 Name:		vkeybd
-Version:	0.1.17
-Release:	2
+Version:	0.1.17b
+Release:	1
 License:	GPL
 Group:		X11/Applications/Sound
-Source0:	http://www.alsa-project.org/~iwai/%{name}-%{version}.tar.gz
-# Source0-md5:	3be348329a5aac3cdc21f89458d9369a
+Source0:	http://ftp.suse.com/pub/people/tiwai/vkeybd/%{name}-%{version}.tar.bz2
+# Source0-md5:	821a3aaf9b87639dc7143f5a95ff6679
 Source1:	%{name}rc
 Source2:	%{name}.desktop
 Patch0:		%{name}-Makefile.patch
