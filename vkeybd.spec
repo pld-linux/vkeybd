@@ -5,18 +5,18 @@
 Summary:	Virtual Keyboard
 Summary(pl.UTF-8):	Wirtualne klawisze
 Name:		vkeybd
-Version:	0.1.17b
+Version:	0.1.18b
 Release:	1
 License:	GPL
 Group:		X11/Applications/Sound
 Source0:	http://ftp.suse.com/pub/people/tiwai/vkeybd/%{name}-%{version}.tar.bz2
-# Source0-md5:	821a3aaf9b87639dc7143f5a95ff6679
+# Source0-md5:	2b5c46e753aed2729147e8aa688b08c7
 Source1:	%{name}rc
 Source2:	%{name}.desktop
 Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-lib64.patch
-URL:		http://www.alsa-project.org/alsa.html
-BuildRequires:	XFree86-devel
+URL:		http://www.alsa-project.org/~tiwai/alsa.html
+BuildRequires:	xorg-xserver-server-devel
 BuildRequires:	alsa-lib-devel
 %{?with_ladcca:BuildRequires:	ladcca-devel >= 0.4.0}
 BuildRequires:	tk-devel
