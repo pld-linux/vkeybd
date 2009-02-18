@@ -14,12 +14,11 @@ Source0:	http://ftp.suse.com/pub/people/tiwai/vkeybd/%{name}-%{version}.tar.bz2
 Source1:	%{name}rc
 Source2:	%{name}.desktop
 Patch0:		%{name}-Makefile.patch
-Patch1:		%{name}-lib64.patch
 URL:		http://www.alsa-project.org/~tiwai/alsa.html
-BuildRequires:	xorg-xserver-server-devel
 BuildRequires:	alsa-lib-devel
 %{?with_ladcca:BuildRequires:	ladcca-devel >= 0.4.0}
 BuildRequires:	tk-devel
+BuildRequires:	xorg-lib-libX11-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -33,12 +32,14 @@ klawisze syntezatora MIDI.
 %prep
 %setup -q -n %{name}
 %patch0 -p1
-%if "%{_lib}" == "lib64"
-%patch1 -p1
-%endif
 
 %build
-%{__make} %{?with_ladcca:USE_LADCCA=1}
+%{__make} \
+	CC="%{__cc}" \
+	COPTFLAGS="%{rpmcflags} -Wall" \
+	XLIB="-lX11" \
+	XINC= \
+	%{?with_ladcca:USE_LADCCA=1}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -57,8 +58,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog README
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man?/*
+%attr(755,root,root) %{_bindir}/sftovkb
+%attr(755,root,root) %{_bindir}/vkeybd
+%{_mandir}/man1/vkeybd.1*
 %{_datadir}/vkeybd
-%{_desktopdir}/*.desktop
-%{_pixmapsdir}/*.png
+%{_desktopdir}/vkeybd.desktop
+%{_pixmapsdir}/vkeybd.png
